@@ -4,6 +4,8 @@ const holes = [...document.querySelectorAll('.hole')];
 const scoreEl = document.querySelector('.score span');
 let score = 0;
 
+
+
 const sound = new Audio("whack.mp3");
 
 function run(){
@@ -38,6 +40,8 @@ function run(){
 
 const startButton = document.getElementById('start-button');
 startButton.addEventListener('click', () => {
+    cursor.style.display = 'block';
+
     score = 0;
     scoreEl.textContent = score;
     holes.forEach(hole => {
@@ -49,7 +53,11 @@ startButton.addEventListener('click', () => {
     run();
 });
 const pauseButton = document.getElementById('pause-button');
+pauseButton.addEventListener("mouseenter", () => {
+    cursor.style.display = "none";
+});
 pauseButton.addEventListener('click', () => {
+    cursor.style.display = 'none';
     holes.forEach(hole => {
         const mole = hole.querySelector('.mole');
         if (mole) {
