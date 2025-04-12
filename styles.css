@@ -49,8 +49,19 @@ body{
     width:73%;
     position: absolute;
     left: 50%;
-    transform: translateX(-49%);
+    transform: translateX(-50%);
     bottom:30px;
+    animation: rise 0.3s ease-out;
+    z-index:2;
+}
+
+@keyframes rise{
+    0%{
+        transform: translateX(-50%) translateY(100%);
+    }
+    100%{
+        transform: translateX(-50%) translateY(0%);
+    }
 }
 
 /* score board */
@@ -75,6 +86,8 @@ body{
     background-size: 100% 100%;
     transform: translate(-20%, -20%);
     transition: trandsform 0.1s ease-in-out;
+    pointer-events: none;
+    z-index: 3;
 }
 
 .cursor.active{
