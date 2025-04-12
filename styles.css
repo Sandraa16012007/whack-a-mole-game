@@ -22,8 +22,34 @@ body{
 /*header*/
 
 .header{
-    margin-right:40px;
+    width:500px;
 }
+h1{
+    font-family: "Peralta", serif;
+    font-size: 45px;
+    margin-bottom: 20px;
+    text-shadow: white 0px 0px 5px, rgb(27, 122, 6) 0px 0px 10px;
+}
+.game-desc{
+    font-family: "Mouse Memoirs", sans-serif;
+    font-size:25px;
+    margin-bottom:30px;
+}
+#start-button,#pause-button{
+    font-family: "Mouse Memoirs", sans-serif;
+    font-size: 25px;
+    background-color: #a8490e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 2px solid #481f05;
+    margin:10px;
+
+}
+
 
 
 /*game*/
@@ -32,7 +58,7 @@ body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 40px;
+    gap: 30px;
     width: 400px;
     height: 400px;
 }
@@ -70,7 +96,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left:100px;
+    margin-left:70px;
     background-color: aliceblue;
     width:330px;
     height: 220px;
