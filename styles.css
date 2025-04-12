@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#5cbe0c 0%, #8eee40 20%, #5cbe0c 100%);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    gap:60px;
+}
+
+/*header*/
+
+.header{
+    margin-right:40px;
+}
+
+
+/*game*/
+.grid-container{
+    margin-left:40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 40px;
+    width: 400px;
+    height: 400px;
+}
+.hole{
+    background-color: #a5550a;
+    border-radius: 50%;
+    box-shadow: inset 0 10px 0 4px rgb(84, 32, 8),
+                inset 15px 10px 15px rgba(0, 0, 0, 0.3),
+                0px 0px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.hole .mole{
+    width:73%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-49%);
+    bottom:30px;
+}
+
+/* score board */
+.score-board{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left:100px;
+    background-color: aliceblue;
+    width:330px;
+    height: 220px;
+}
+
+.cursor{
+    height: 120px;
+    width: 100px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background: url("hammer.png");
+    background-size: 100% 100%;
+    transform: translate(-20%, -20%);
+    transition: trandsform 0.1s ease-in-out;
+}
+
+.cursor.active{
+    transform: translate(-20%, -20%) rotate(45deg);
+    transition: transform 0.1s ease-in-out;
+}
