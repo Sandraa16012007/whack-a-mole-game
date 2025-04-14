@@ -6,7 +6,12 @@ let score = 0;
 
 
 
-const sound = new Audio("whack.mp3");
+const whack = new Audio("whack.mp3");
+whack.volume = 1;
+const bgm = new Audio("bgm.mp3");
+bgm.loop = true;
+bgm.volume = 0.5;
+const over = new Audio("stop.mp3");
 
 function run(){
     const i = Math.floor(Math.random() * holes.length)
@@ -19,7 +24,7 @@ function run(){
 
     img.addEventListener('click', () => {
         score += 10;
-        sound.play();
+        whack.play();
         scoreEl.textContent = score;
         img.src = 'mole-whacked.png';
         clearTimeout(timer);
@@ -41,6 +46,7 @@ function run(){
 const startButton = document.getElementById('start-button');
 startButton.addEventListener('click', () => {
     cursor.style.display = 'block';
+    bgm.play();
 
     score = 0;
     scoreEl.textContent = score;
@@ -57,6 +63,8 @@ pauseButton.addEventListener("mouseenter", () => {
     cursor.style.display = "none";
 });
 pauseButton.addEventListener('click', () => {
+    over.play();
+    bgm.pause();
     cursor.style.display = 'none';
     holes.forEach(hole => {
         const mole = hole.querySelector('.mole');
